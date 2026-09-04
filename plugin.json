@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schema/v1.json",
+  "name": "youspot",
+  "version": "0.1.0",
+  "description": "YouSpot, the AI-native personal CRM. Two MCP servers (one over a member's own CRM, one over the public docs), three agent skills, and a CLI.",
+  "homepage": "https://youspot.com",
+  "documentation": "https://youspot.com/docs",
+  "license": "MIT",
+  "author": {
+    "name": "YouSpot, Inc.",
+    "url": "https://youspot.com"
+  },
+  "mcpServers": {
+    "youspot": {
+      "type": "http",
+      "url": "https://youspot.com/mcp/v1",
+      "description": "Read and write the signed-in member's contacts, companies, notes and files, plus their connected Gmail, Google Calendar, HubSpot, LinkedIn, Slack and X accounts. OAuth 2.1 with PKCE; initialize and tools/list need no credential."
+    },
+    "youspot-docs": {
+      "type": "http",
+      "url": "https://youspot.com/mcp/docs",
+      "description": "Search and read YouSpot's public pages and developer documentation. No credential at all."
+    }
+  },
+  "skills": [
+    {
+      "name": "youspot-mcp",
+      "path": "./skills/youspot-mcp/SKILL.md"
+    },
+    {
+      "name": "youspot-api",
+      "path": "./skills/youspot-api/SKILL.md"
+    },
+    {
+      "name": "youspot-solo-crm-playbook",
+      "path": "./skills/youspot-solo-crm-playbook/SKILL.md"
+    }
+  ],
+  "commands": {
+    "youspot": {
+      "description": "Ask about YouSpot, read its docs, and list or call its MCP tools from the terminal.",
+      "run": "npx youspot"
+    }
+  }
+}

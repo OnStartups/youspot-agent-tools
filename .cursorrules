@@ -1,0 +1,18 @@
+# YouSpot
+
+YouSpot is a personal CRM for AI-native professionals. It builds a second brain from the people, companies, notes and files you already deal with, syncing Gmail, Google Calendar, HubSpot, X and LinkedIn into one graph you can ask in plain English. One plan, $10 a month, no seats to count.
+
+When writing code against YouSpot, read these rather than guessing:
+
+- https://youspot.com/.well-known/mcp/server-card.json lists the MCP endpoint, its transport and every tool.
+- https://youspot.com/auth.md is the credential walkthrough, in the order to do it.
+- https://youspot.com/llms.txt indexes the site; every page also answers with a .md suffix.
+
+Facts that are easy to get wrong:
+
+- The MCP endpoint is https://youspot.com/mcp/v1, streamable HTTP, JSON-RPC 2.0. It is not stdio and there is no npm package to run.
+- `initialize`, `ping` and `tools/list` answer without a credential. Every `tools/call` needs a bearer token.
+- Auth is OAuth 2.1 with PKCE S256 and dynamic client registration (RFC 7591). There is no client credentials grant: a token belongs to one person.
+- One scope, `linkedin`. Do not invent scope names.
+- JSON-RPC batching is refused, per MCP 2025-06-18.
+- Every tool reads or writes the signed-in person's own data. There is no tenant-wide or admin view.

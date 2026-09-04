@@ -1,0 +1,46 @@
+{
+  "name": "youspot",
+  "version": "0.1.0",
+  "description": "Official CLI and SDK for YouSpot, the AI-native personal CRM. Ask questions, read the docs, list and call the MCP tools, and read the public member directory.",
+  "keywords": [
+    "agent",
+    "cli",
+    "crm",
+    "mcp",
+    "model-context-protocol",
+    "personal-crm",
+    "sdk",
+    "youspot"
+  ],
+  "homepage": "https://youspot.com",
+  "bugs": {
+    "url": "https://youspot.com/support"
+  },
+  "license": "MIT",
+  "author": "YouSpot, Inc.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnStartups/youspot-agent-tools.git"
+  },
+  "bin": {
+    "youspot": "./bin/youspot.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "skills",
+    "plugin.json",
+    "AGENTS.md",
+    "README.md"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

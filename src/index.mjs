@@ -1,6 +1,7 @@
 export const BASE_URL = process.env.YOUSPOT_BASE_URL ?? "https://youspot.com";
 export const MCP_URL = `${BASE_URL}/mcp/v1`;
 export const DOCS_MCP_URL = `${BASE_URL}/mcp/docs`;
+export const SANDBOX_MCP_URL = `${BASE_URL}/mcp/sandbox`;
 
 const USER_AGENT = "youspot-cli";
 
@@ -103,6 +104,18 @@ export function callTool(name, args = {}, { token = process.env.YOUSPOT_TOKEN } 
     );
   }
   return rpc(MCP_URL, "tools/call", { name, arguments: args }, token);
+}
+
+export function sandboxTools() {
+  return rpc(SANDBOX_MCP_URL, "tools/list");
+}
+
+export function callSandboxTool(name, args = {}) {
+  return rpc(SANDBOX_MCP_URL, "tools/call", { name, arguments: args });
+}
+
+export function identity(type = "anonymous", { token } = {}) {
+  return request(`${BASE_URL}/agent/identity`, { method: "POST", body: { type }, token });
 }
 
 export function member(username) {

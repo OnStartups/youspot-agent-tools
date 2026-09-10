@@ -1,6 +1,6 @@
 {
   "name": "youspot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Official CLI and SDK for YouSpot, the AI-native personal CRM. Ask questions, read the docs, list and call the MCP tools, and read the public member directory.",
   "keywords": [
     "agent",
@@ -30,6 +30,7 @@
     "src",
     "skills",
     "plugin.json",
+    "mcp.json",
     "AGENTS.md",
     "README.md"
   ],

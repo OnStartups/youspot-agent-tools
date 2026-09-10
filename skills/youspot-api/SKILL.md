@@ -1,6 +1,11 @@
 ---
 name: youspot-api
-description: Call YouSpot over plain HTTP: public profile endpoints with no auth, and the tool surface with a bearer token.
+description: Call YouSpot over plain HTTP: public profile and directory endpoints with no auth, batched reads, the sandbox, and the MCP tool surface with a bearer token. Use when integrating without an MCP client, generating client code, or debugging a 401 or 429.
+license: MIT
+metadata:
+  author: YouSpot, Inc.
+  homepage: https://youspot.com/docs
+  version: "1.1.0"
 ---
 
 # YouSpot over HTTP
@@ -12,6 +17,20 @@ curl https://youspot.com/api/human/dharmesh.json
 curl https://youspot.com/api/human/dharmesh.md
 curl https://youspot.com/api/network/members
 ```
+
+## Batch
+
+Up to 20 GET reads in one round trip. Each item answers with its own `status` and `body`, in order, so one failure never hides the others.
+
+```bash
+curl -X POST https://youspot.com/api/batch \
+  -H "Content-Type: application/json" \
+  -d '{"requests":[{"id":"dir","path":"/api/network/members","query":{"q":"consulting"}},{"id":"me","path":"/api/human/dharmesh"}]}'
+```
+
+## Sandbox
+
+Every anonymous path also answers under `https://youspot.com/sandbox`, where `/mcp/v1` is the demo-account MCP server: `tools/call` needs no credential and writes are refused. `GET https://youspot.com/sandbox` describes the mount and says whether the demo account is seeded.
 
 ## Authenticated
 

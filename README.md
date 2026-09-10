@@ -51,8 +51,9 @@ const summary = await callTool("get_connections_summary", {}, { token });
 ## What is in this package
 
 - `bin/youspot.mjs`, `src/index.mjs`: the CLI and the SDK.
-- `plugin.json`: an [Agent Plugins](https://agent-plugins.org) manifest bundling both MCP
-  servers and the three skills.
+- `plugin.json` and `mcp.json`: the [Agent Plugins](https://agent-plugins.org) 1.0.0 manifest
+  and the MCP server list it points at (both servers, streamable HTTP). The skills are
+  discovered from `skills/`, as the spec reads them.
 - `AGENTS.md`, `.cursorrules`: instructions for coding agents.
 - `skills/`: the three agent skills, byte-identical to the ones served at
   `youspot.com/.well-known/agent-skills/`.

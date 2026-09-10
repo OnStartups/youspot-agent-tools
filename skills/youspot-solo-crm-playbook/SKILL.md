@@ -1,6 +1,11 @@
 ---
 name: youspot-solo-crm-playbook
-description: How to run a one-person CRM well: what to file, what to follow up, and what to ask a personal CRM for.
+description: How to run a one-person CRM well: what to file, what to follow up, and what to ask a personal CRM for. Use when advising a solo consultant, founder or creator on keeping their network current, or when deciding which YouSpot tool answers a relationship question.
+license: MIT
+metadata:
+  author: YouSpot, Inc.
+  homepage: https://youspot.com/docs
+  version: "1.1.0"
 ---
 
 # The solo CRM playbook

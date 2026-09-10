@@ -24,19 +24,28 @@ person's own CRM. [auth.md](https://youspot.com/auth.md) is the walkthrough.
 - `GET https://youspot.com/index.md`: the home page as markdown
 - `GET https://youspot.com/agents.md`: what an agent can do here, in one page
 - `GET https://youspot.com/.well-known/mcp/server-card.json`: the endpoint, transport and every tool
+- `GET https://youspot.com/.well-known/mcp.json`: every MCP server on this domain, each with its own card
 - `GET https://youspot.com/auth.md`: how an agent gets a credential
+- `GET https://youspot.com/agent/identity`: what identity you can hold here, and who you are holding
 - `GET https://youspot.com/openapi.json`: every HTTP endpoint that exists
 - `GET https://youspot.com/plugin.json`: both MCP servers and the skills, in one bundle
+- `GET https://youspot.com/.well-known/ai-plugin.json`: the OpenAI manifest, naming the OpenAPI spec, the OAuth endpoints and the logo
 - `GET https://youspot.com/.well-known/api-catalog`: RFC 9727
 - `GET https://youspot.com/v1`: every endpoint, and what each one costs in credentials
 - `GET https://youspot.com/mcp/docs`: the public pages over MCP, no credential at all
+- `GET https://youspot.com/mcp/sandbox`: the read tools over a demo account, no credential and no signup
+- `GET https://youspot.com/sandbox`: the sandbox described: what is mounted under /sandbox, and whether the demo account is seeded
 - `GET https://youspot.com/ask`: a question in plain words, answered from these pages
 - `GET https://youspot.com/.well-known/agent-card.json`: JSON-RPC at /a2a
 - `GET https://youspot.com/.well-known/oauth-authorization-server`: RFC 8414
 - `GET https://youspot.com/.well-known/oauth-protected-resource`: RFC 9728
 - `GET https://youspot.com/.well-known/agent-skills/index.json`: skills an agent can load
 - `GET https://youspot.com/.well-known/ard.json`: agent resource discovery
+- `GET https://youspot.com/.well-known/ucp`: what an agent can transact with here, and what it cannot
 - `GET https://youspot.com/.well-known/security.txt`: how to report a vulnerability
+- `GET https://youspot.com/.well-known/http-message-signatures-directory`: the key YouSpot agents sign their own requests with
+- `POST https://youspot.com/api/batch`: up to 20 GET reads in one round trip, each with its own status and body
+- `POST https://youspot.com/sandbox/mcp/v1`: the sandbox mount, where tools/call needs no credential and writes are refused
 
 ## Authentication
 

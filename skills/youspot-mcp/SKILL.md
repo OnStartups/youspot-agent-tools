@@ -1,6 +1,11 @@
 ---
 name: youspot-mcp
-description: Connect to the YouSpot MCP server and read or write the signed-in member's personal CRM.
+description: Connect to the YouSpot MCP server and read or write the signed-in member's personal CRM. Use when a task is about the people, companies, notes or files one member already knows, what needs their attention, or logging an interaction and a follow-up.
+license: MIT
+metadata:
+  author: YouSpot, Inc.
+  homepage: https://youspot.com/docs
+  version: "1.1.0"
 ---
 
 # YouSpot over MCP

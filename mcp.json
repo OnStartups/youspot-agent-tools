@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "youspot": {
+      "type": "streamable-http",
+      "url": "https://youspot.com/mcp/v1"
+    },
+    "youspot-docs": {
+      "type": "streamable-http",
+      "url": "https://youspot.com/mcp/docs"
+    }
+  }
+}

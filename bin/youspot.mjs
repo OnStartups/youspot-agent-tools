@@ -3,6 +3,7 @@ import {
   BASE_URL,
   YouSpotError,
   ask,
+  callSandboxTool,
   callTool,
   directory,
   index,
@@ -22,6 +23,7 @@ const USAGE = `youspot: the official CLI for YouSpot (${BASE_URL})
   youspot pages                    Every page that can be read.
   youspot tools                    List the MCP tools. Needs no credential.
   youspot call <tool> [json]       Call one MCP tool. Needs YOUSPOT_TOKEN.
+  youspot sandbox <tool> [json]    Call one read tool against the demo account. No credential.
   youspot member <username>        One public member profile.
   youspot directory [--limit n]    A page of the public member directory.
   youspot index                    Every endpoint, and what each costs in credentials.
@@ -122,6 +124,21 @@ async function main() {
       }
     }
     show(await callTool(name, args), textOf);
+    return 0;
+  }
+
+  if (command === "sandbox") {
+    const [name, json] = rest;
+    if (!name) throw new YouSpotError("Name a tool: youspot sandbox search_graph_objects");
+    let args = {};
+    if (json) {
+      try {
+        args = JSON.parse(json);
+      } catch {
+        throw new YouSpotError(`Arguments must be JSON. Got: ${json}`);
+      }
+    }
+    show(await callSandboxTool(name, args), textOf);
     return 0;
   }
 

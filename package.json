@@ -23,7 +23,7 @@
     "url": "git+https://github.com/OnStartups/youspot-agent-tools.git"
   },
   "bin": {
-    "youspot": "./bin/youspot.mjs"
+    "youspot": "bin/youspot.mjs"
   },
   "files": [
     "bin",

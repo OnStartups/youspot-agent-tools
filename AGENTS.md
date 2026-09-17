@@ -1,6 +1,6 @@
 # YouSpot for agents
 
-> YouSpot is a personal CRM for AI-native professionals. It builds a second brain from the people, companies, notes and files you already deal with, syncing Gmail, Google Calendar, HubSpot, X and LinkedIn into one graph you can ask in plain English. Solo is $1 a month, Pro is $10, and there are no seats to count. YouSpot Pro, 30 days free is $0 today at /pricing/freetrial. Card required. Then $10/month from day 31. Cancel before that and you pay nothing.
+> YouSpot is a personal CRM for AI-native professionals. It builds a second brain from the people, companies, notes and files you already deal with, syncing Gmail, Google Calendar, HubSpot, X and LinkedIn into one graph you can ask in plain English. YouSpot Free is $0 a month with no credit card, YouSpot Pro is $10 a month, and there are no seats to count. YouSpot Pro, 30 days free is $0 today at /pricing/freetrial. Card required. Then $10/month from day 31. Cancel before that and you pay nothing.
 
 ## Start here
 
@@ -85,8 +85,8 @@ A missing or expired bearer returns `401` with `WWW-Authenticate: Bearer`, namin
 
 ## Pricing
 
+- YouSpot Free: $0 per month, 50 credits/month, no credit card
 - YouSpot Pro: $10 per month, 1,000 credits/month
-- YouSpot Solo: $1 per month, 100 credits/month
 
 ## Links
 

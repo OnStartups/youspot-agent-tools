@@ -48,6 +48,30 @@ const summary = await callTool("get_connections_summary", {}, { token });
 
 `YOUSPOT_BASE_URL` overrides the origin, for anyone running YouSpot elsewhere.
 
+## Install an agent skill
+
+List the skills in the official public repository:
+
+```bash
+bunx skills add OnStartups/youspot-agent-tools --list
+```
+
+Install only the skill you need into your current project:
+
+```bash
+bunx skills add OnStartups/youspot-agent-tools --skill youspot-mcp
+```
+
+The CLI prompts for the target agent. The available skills are:
+
+- `youspot-mcp`: connect an MCP client and work with a member's CRM using OAuth.
+- `youspot-api`: use the public HTTP endpoints and documentation.
+- `youspot-solo-crm-playbook`: organize a personal CRM and plan follow-ups.
+
+Replace `youspot-mcp` in the command with another name from this list. Installing a skill
+adds instructions to your agent; it does not grant access to a YouSpot account or register
+the repository with skills.sh. A skills.sh listing is separate from these source files.
+
 ## What is in this package
 
 - `bin/youspot.mjs`, `src/index.mjs`: the CLI and the SDK.

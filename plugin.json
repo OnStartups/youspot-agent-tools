@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "youspot",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Official YouSpot agent tools: two MCP servers (one over a member's own CRM, one over the public docs, declared in mcp.json), three agent skills under skills/, and the youspot CLI. YouSpot is the AI-native personal CRM.",
   "author": {
     "name": "YouSpot, Inc.",

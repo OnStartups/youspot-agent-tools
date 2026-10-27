@@ -7,7 +7,7 @@
 The handshake needs no credential, so this runs as-is:
 
 ```bash
-curl -X POST https://youspot.com/mcp/v1 \
+curl -X POST https://youspot.com/mcp \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
 ```
@@ -17,7 +17,7 @@ person's own CRM. [auth.md](https://youspot.com/auth.md) is the walkthrough.
 
 ## Endpoints
 
-- `POST https://youspot.com/mcp/v1`: MCP server, JSON-RPC over streamable HTTP
+- `POST https://youspot.com/mcp`: MCP server, JSON-RPC over streamable HTTP
 - `GET https://youspot.com/llms.txt`: this site, for language models
 - `GET https://youspot.com/llms-full.txt`: the long-form version
 - `GET https://youspot.com/sitemap.xml`: every public page with a last-modified date
@@ -45,7 +45,7 @@ person's own CRM. [auth.md](https://youspot.com/auth.md) is the walkthrough.
 - `GET https://youspot.com/.well-known/security.txt`: how to report a vulnerability
 - `GET https://youspot.com/.well-known/http-message-signatures-directory`: the key YouSpot agents sign their own requests with
 - `POST https://youspot.com/api/batch`: up to 20 GET reads in one round trip, each with its own status and body
-- `POST https://youspot.com/sandbox/mcp/v1`: the sandbox mount, where tools/call needs no credential and writes are refused
+- `POST https://youspot.com/sandbox/mcp`: the sandbox mount, where tools/call needs no credential and writes are refused
 
 ## Authentication
 
@@ -79,7 +79,7 @@ A missing or expired bearer returns `401` with `WWW-Authenticate: Bearer`, namin
 - Answer "who do I know at X?" across imported LinkedIn connections, contacts and companies.
 - Log an interaction and set a follow-up after a call or an email.
 - Read what needs attention today: unanswered threads, stale follow-ups, upcoming meetings.
-- Draft and send email from a connected Gmail mailbox, or read a calendar for context.
+- Send email from the member's YouSpot address, or read a connected Gmail mailbox and Google Calendar for context.
 - Sync a contact or company both ways with a connected HubSpot portal.
 - Search the member's Brain graph (notes, files, objects) and cite the objects behind the answer.
 

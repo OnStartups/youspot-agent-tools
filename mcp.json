@@ -3,7 +3,7 @@
   "mcpServers": {
     "youspot": {
       "type": "streamable-http",
-      "url": "https://youspot.com/mcp/v1"
+      "url": "https://youspot.com/mcp"
     },
     "youspot-docs": {
       "type": "streamable-http",

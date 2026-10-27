@@ -10,7 +10,7 @@ When writing code against YouSpot, read these rather than guessing:
 
 Facts that are easy to get wrong:
 
-- The MCP endpoint is https://youspot.com/mcp/v1, streamable HTTP, JSON-RPC 2.0. It is not stdio and there is no npm package to run.
+- The MCP endpoint is https://youspot.com/mcp, streamable HTTP, JSON-RPC 2.0. It is not stdio and there is no npm package to run.
 - `initialize`, `ping` and `tools/list` answer without a credential. Every `tools/call` needs a bearer token.
 - Auth is OAuth 2.1 with PKCE S256 and dynamic client registration (RFC 7591). There is no client credentials grant: a token belongs to one person.
 - One scope, `linkedin`. Do not invent scope names.

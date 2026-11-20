@@ -5,7 +5,7 @@ import { Readable } from "node:stream";
 
 export const BASE = "http://localhost:3001";
 
-export function fakeServer(routes) {
+function fakeServer(routes) {
   const calls = [];
   const fetch = async (url, init = {}) => {
     const parsed = new URL(url);
@@ -30,12 +30,12 @@ export function fakeServer(routes) {
   return { fetch, calls, called: (key) => calls.filter((call) => call.key === key) };
 }
 
-export function sink() {
+function sink() {
   const out = { text: "", write: (chunk) => ((out.text += chunk), true) };
   return out;
 }
 
-export function fakeClock() {
+function fakeClock() {
   const clock = { time: 0, sleeps: [] };
   clock.now = () => clock.time;
   clock.sleep = async (ms) => {
@@ -45,7 +45,7 @@ export function fakeClock() {
   return clock;
 }
 
-export function home() {
+function home() {
   return mkdtempSync(join(tmpdir(), "youspot-cli-"));
 }
 

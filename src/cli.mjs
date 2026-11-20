@@ -125,7 +125,7 @@ function jsonArgs(json) {
   }
 }
 
-export function openBrowser(url, { platform = process.platform } = {}) {
+function openBrowser(url, { platform = process.platform } = {}) {
   const [command, args] =
     platform === "darwin"
       ? ["open", [url]]
